@@ -1,0 +1,17 @@
+modo delcarativo kubernetes
+
+montar o arquivo antes
+
+INICIAR
+
+ kubectl apply-f hello.yml
+
+Deletar
+
+ kubectl delete -f hello.yml
+
+Caso preciso atualizar o projeto, basta rebuildar a imagem e dar push no hub, dai muda no arquivo yml (apenas o de deploymente)
+a tag de imagem, jogando a tag atual da imagem
+depois é só usar o comando kubectl apply-f hello.yml dnv
+
+É possível criar um arquivo único juntado o de deployment e de service, separando com ---, começando pelo service (é uma boa prática)

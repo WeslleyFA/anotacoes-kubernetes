@@ -1,0 +1,37 @@
+Pods: são os containers rodando
+
+Service: é o que expoes os deployments, para serem acessados
+
+Node: são as maquinas
+
+comandos:
+
+kubectl get deployments/services/pods
+ou
+kubectl describe deployments/services/pods
+
+pegar status dos pods dps de atualizar imagem
+ kubectl rollout status deployment/hello-deployment
+
+
+cria deplyment:
+ kubectl create deployment hello-deployment --image=weslley123/teste-kub
+
+atualizar imagem do deployment
+ kubectl set image deployment/<nome deployment>  <nome container, peguei no dashboard do minikube>=<nome da imagem com a tag atualizada>
+ kubectl set image deployment/hello-deployment  teste-kub=weslley123/teste-kub:3
+
+desfazer uma atualização, caso de algum erro
+ kubectl rollout undo deployment/hello-deployment
+
+expoes o pod: (service)
+ kubectl expose deployment hello-deployment --type=LoadBalancer --port=8080
+
+replicar pods: (escalar a aplicação)
+ kubectl scale deployment/hello-deployment --replicas=5
+
+para diminuir as replicas é iguals, basta diminuir as replicas no comando
+ kubectl scale deployment/hello-deployment --replicas=3 (de 5 para 3)	
+
+deletar services
+ kubectl delete service hello-deployment
