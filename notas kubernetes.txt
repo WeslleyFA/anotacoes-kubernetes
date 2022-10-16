@@ -1,8 +1,10 @@
-Pods: são os containers rodando
+Pods: são os containers em um node
 
 Service: é o que expoes os deployments, para serem acessados
 
 Node: são as maquinas
+
+Deployment: a exexução de uma imagem/projeto em um pod
 
 comandos:
 
